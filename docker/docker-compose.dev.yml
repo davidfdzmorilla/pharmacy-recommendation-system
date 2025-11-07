@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  pharmacy-app-dev:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: pharmacy-app-dev
+    environment:
+      - DISPLAY=${DISPLAY}
+      - SIMULATION_MODE=true
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - PYTHONPATH=/app
+    env_file:
+      - ../.env
+    volumes:
+      # Hot-reload: montar código como volumen
+      - ../raspberry_app:/app/raspberry_app
+      - ../scripts:/app/scripts
+      - ../tests:/app/tests
+      - ../data:/app/data
+      - ../logs:/app/logs
+      - ../requirements.txt:/app/requirements.txt
+      - ../requirements-dev.txt:/app/requirements-dev.txt
+      # X11 para GUI en Mac
+      - /tmp/.X11-unix:/app/.X11-unix:rw
+    network_mode: host
+    stdin_open: true
+    tty: true
+    command: python raspberry_app/main.py

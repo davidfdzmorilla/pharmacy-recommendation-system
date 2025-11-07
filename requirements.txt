@@ -1,0 +1,20 @@
+# Core API
+anthropic==0.40.0
+
+# Environment & Config
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+# Database
+# SQLite viene incluido en Python
+
+# GUI (tkinter viene con Python)
+Pillow==10.1.0
+
+# Barcode reading
+evdev==1.6.1; sys_platform == 'linux'
+pynput==1.7.6
+
+# HTTP & Utilities
+requests==2.31.0
+cachetools==5.3.2

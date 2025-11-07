@@ -1,10 +1,3 @@
-# Claude Code
-.claude/
-CLAUDE.md
-
-# Environment variables (sensitive data)
-.env
-
 # Python
 __pycache__/
 *.py[cod]
@@ -18,21 +11,31 @@ env/
 ENV/
 .venv
 
+# Environment variables
+.env
+
 # IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
 # Testing
 .pytest_cache/
 .coverage
 htmlcov/
+.tox/
 
 # Build
 *.egg-info/
 dist/
 build/
+
+# Git
+.git/
+.gitignore
+.gitattributes
 
 # OS
 .DS_Store
@@ -40,8 +43,22 @@ Thumbs.db
 
 # Logs
 *.log
-logs/*.log
+logs/
 
-# Database
+# Database (development)
+data/pharmacy.db
 data/*.db
-data/*.db-journal
+
+# Docker
+docker/
+Dockerfile*
+docker-compose*.yml
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Claude
+.claude/
+CLAUDE.md
