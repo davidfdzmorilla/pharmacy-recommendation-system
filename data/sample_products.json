@@ -1,0 +1,902 @@
+[
+  {
+    "ean": "8470001234567",
+    "name": "Ibuprofeno 600mg 20 comprimidos",
+    "price": 4.95,
+    "category": "Analgésicos",
+    "active_ingredient": "Ibuprofeno",
+    "description": "Antiinflamatorio no esteroideo para dolor y fiebre",
+    "stock": 50
+  },
+  {
+    "ean": "8470001234574",
+    "name": "Paracetamol 1g 40 comprimidos",
+    "price": 3.50,
+    "category": "Analgésicos",
+    "active_ingredient": "Paracetamol",
+    "description": "Analgésico y antitérmico para dolor leve a moderado",
+    "stock": 75
+  },
+  {
+    "ean": "8470001234581",
+    "name": "Nolotil 575mg 20 cápsulas",
+    "price": 5.20,
+    "category": "Analgésicos",
+    "active_ingredient": "Metamizol",
+    "description": "Analgésico potente para dolor agudo",
+    "stock": 40
+  },
+  {
+    "ean": "8470001234598",
+    "name": "Aspirina 500mg 20 comprimidos",
+    "price": 3.75,
+    "category": "Analgésicos",
+    "active_ingredient": "Ácido acetilsalicílico",
+    "description": "Analgésico, antitérmico y antiagregante plaquetario",
+    "stock": 60
+  },
+  {
+    "ean": "8470001234604",
+    "name": "Enantyum 25mg 20 comprimidos",
+    "price": 6.80,
+    "category": "Analgésicos",
+    "active_ingredient": "Dexketoprofeno",
+    "description": "Antiinflamatorio para dolor agudo",
+    "stock": 35
+  },
+  {
+    "ean": "8470001234611",
+    "name": "Paracetamol + Codeína 30 comprimidos",
+    "price": 7.50,
+    "category": "Analgésicos",
+    "active_ingredient": "Paracetamol + Codeína",
+    "description": "Analgésico combinado para dolor moderado a intenso",
+    "stock": 25
+  },
+  {
+    "ean": "8470001234628",
+    "name": "Gelocatil 650mg 20 comprimidos",
+    "price": 4.20,
+    "category": "Analgésicos",
+    "active_ingredient": "Paracetamol",
+    "description": "Analgésico y antitérmico de acción rápida",
+    "stock": 55
+  },
+  {
+    "ean": "8470001234635",
+    "name": "Voltaren Emulgel 1% 60g",
+    "price": 10.50,
+    "category": "Analgésicos",
+    "active_ingredient": "Diclofenaco",
+    "description": "Gel antiinflamatorio tópico para dolor muscular",
+    "stock": 30
+  },
+  {
+    "ean": "8470001234642",
+    "name": "Nurofen 400mg 20 comprimidos",
+    "price": 5.95,
+    "category": "Analgésicos",
+    "active_ingredient": "Ibuprofeno",
+    "description": "Antiinflamatorio para dolor y fiebre",
+    "stock": 45
+  },
+  {
+    "ean": "8470001234659",
+    "name": "Analgilasa 650mg 20 sobres",
+    "price": 4.50,
+    "category": "Analgésicos",
+    "active_ingredient": "Paracetamol",
+    "description": "Analgésico en polvo de rápida disolución",
+    "stock": 40
+  },
+  {
+    "ean": "8470002345678",
+    "name": "Omeprazol 20mg 28 cápsulas",
+    "price": 3.80,
+    "category": "Digestivos",
+    "active_ingredient": "Omeprazol",
+    "description": "Inhibidor bomba protones para acidez y úlceras",
+    "stock": 65
+  },
+  {
+    "ean": "8470002345685",
+    "name": "Almax 1g 30 comprimidos masticables",
+    "price": 6.20,
+    "category": "Digestivos",
+    "active_ingredient": "Almagato",
+    "description": "Antiácido para alivio rápido de acidez",
+    "stock": 50
+  },
+  {
+    "ean": "8470002345692",
+    "name": "Primperan 10mg 20 comprimidos",
+    "price": 4.50,
+    "category": "Digestivos",
+    "active_ingredient": "Metoclopramida",
+    "description": "Antiemético para náuseas y vómitos",
+    "stock": 35
+  },
+  {
+    "ean": "8470002345708",
+    "name": "Fortasec 2mg 20 cápsulas",
+    "price": 5.80,
+    "category": "Digestivos",
+    "active_ingredient": "Loperamida",
+    "description": "Antidiarreico de acción rápida",
+    "stock": 40
+  },
+  {
+    "ean": "8470002345715",
+    "name": "Plantaben Sobres 10 unidades",
+    "price": 8.50,
+    "category": "Digestivos",
+    "active_ingredient": "Fibra vegetal",
+    "description": "Laxante natural para estreñimiento ocasional",
+    "stock": 30
+  },
+  {
+    "ean": "8470002345722",
+    "name": "Aerored 40mg 100 cápsulas",
+    "price": 7.95,
+    "category": "Digestivos",
+    "active_ingredient": "Simeticona",
+    "description": "Anti-gases intestinales",
+    "stock": 45
+  },
+  {
+    "ean": "8470002345739",
+    "name": "Gaviscon 24 comprimidos masticables",
+    "price": 6.50,
+    "category": "Digestivos",
+    "active_ingredient": "Alginato + Bicarbonato",
+    "description": "Antiácido y antireflujo",
+    "stock": 55
+  },
+  {
+    "ean": "8470002345746",
+    "name": "Duphalac 667mg/ml 200ml",
+    "price": 5.20,
+    "category": "Digestivos",
+    "active_ingredient": "Lactulosa",
+    "description": "Laxante osmótico suave",
+    "stock": 25
+  },
+  {
+    "ean": "8470003456789",
+    "name": "Redoxon 1000mg 30 comprimidos efervescentes",
+    "price": 9.50,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Vitamina C",
+    "description": "Suplemento de vitamina C para defensas",
+    "stock": 60
+  },
+  {
+    "ean": "8470003456796",
+    "name": "Supradyn Activo 30 comprimidos",
+    "price": 12.95,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Multivitamínico",
+    "description": "Complejo multivitamínico con minerales",
+    "stock": 45
+  },
+  {
+    "ean": "8470003456802",
+    "name": "Vitamina D3 4000UI 60 cápsulas",
+    "price": 11.50,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Colecalciferol",
+    "description": "Vitamina D para huesos y sistema inmune",
+    "stock": 35
+  },
+  {
+    "ean": "8470003456819",
+    "name": "Omega 3 1000mg 90 cápsulas",
+    "price": 14.80,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Ácidos grasos Omega 3",
+    "description": "Suplemento cardiovascular y cerebral",
+    "stock": 40
+  },
+  {
+    "ean": "8470003456826",
+    "name": "Magnesio + B6 30 comprimidos",
+    "price": 8.95,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Magnesio + Vitamina B6",
+    "description": "Para cansancio y función muscular",
+    "stock": 50
+  },
+  {
+    "ean": "8470003456833",
+    "name": "Hierro con vitamina C 60 cápsulas",
+    "price": 9.50,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Hierro + Vitamina C",
+    "description": "Antianémico con mejor absorción",
+    "stock": 30
+  },
+  {
+    "ean": "8470003456840",
+    "name": "Multicentrum Mujer 30 comprimidos",
+    "price": 13.50,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Multivitamínico",
+    "description": "Vitaminas y minerales para mujeres",
+    "stock": 35
+  },
+  {
+    "ean": "8470003456857",
+    "name": "Complejo B 60 comprimidos",
+    "price": 10.20,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Vitaminas B",
+    "description": "Energía y sistema nervioso",
+    "stock": 25
+  },
+  {
+    "ean": "8470003456864",
+    "name": "Calcio + Vitamina D 90 comprimidos",
+    "price": 11.95,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Calcio + Vitamina D3",
+    "description": "Para salud ósea",
+    "stock": 40
+  },
+  {
+    "ean": "8470003456871",
+    "name": "Coenzima Q10 100mg 60 cápsulas",
+    "price": 16.50,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Coenzima Q10",
+    "description": "Antioxidante celular y energía",
+    "stock": 20
+  },
+  {
+    "ean": "8470003456888",
+    "name": "Probióticos 30 cápsulas",
+    "price": 15.80,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Lactobacillus + Bifidobacterium",
+    "description": "Flora intestinal y defensas",
+    "stock": 30
+  },
+  {
+    "ean": "8470003456895",
+    "name": "Zinc 25mg 60 comprimidos",
+    "price": 8.50,
+    "category": "Vitaminas y Suplementos",
+    "active_ingredient": "Zinc",
+    "description": "Sistema inmune y piel",
+    "stock": 35
+  },
+  {
+    "ean": "8470004567890",
+    "name": "Betadine pomada 30g",
+    "price": 5.95,
+    "category": "Dermatología",
+    "active_ingredient": "Povidona yodada",
+    "description": "Antiséptico tópico para heridas",
+    "stock": 45
+  },
+  {
+    "ean": "8470004567906",
+    "name": "Cristalmina 10mg/ml 125ml",
+    "price": 4.50,
+    "category": "Dermatología",
+    "active_ingredient": "Clorhexidina",
+    "description": "Antiséptico para piel y heridas",
+    "stock": 40
+  },
+  {
+    "ean": "8470004567913",
+    "name": "Fucidine 20mg/g crema 30g",
+    "price": 8.75,
+    "category": "Dermatología",
+    "active_ingredient": "Ácido fusídico",
+    "description": "Antibiótico tópico",
+    "stock": 25
+  },
+  {
+    "ean": "8470004567920",
+    "name": "Cicatricure gel 30g",
+    "price": 12.50,
+    "category": "Dermatología",
+    "active_ingredient": "Centella asiática",
+    "description": "Regenerador de cicatrices",
+    "stock": 30
+  },
+  {
+    "ean": "8470004567937",
+    "name": "Blastoestimulina pomada 60g",
+    "price": 9.80,
+    "category": "Dermatología",
+    "active_ingredient": "Centella asiática",
+    "description": "Cicatrizante para heridas",
+    "stock": 35
+  },
+  {
+    "ean": "8470004567944",
+    "name": "Halibut crema protectora 50ml",
+    "price": 7.20,
+    "category": "Dermatología",
+    "active_ingredient": "Vitamina A + E",
+    "description": "Protección piel irritada",
+    "stock": 40
+  },
+  {
+    "ean": "8470004567951",
+    "name": "Voltadol parche 140mg 5 unidades",
+    "price": 11.95,
+    "category": "Dermatología",
+    "active_ingredient": "Diclofenaco",
+    "description": "Parche antiinflamatorio",
+    "stock": 20
+  },
+  {
+    "ean": "8470004567968",
+    "name": "Silvederma spray 100ml",
+    "price": 8.50,
+    "category": "Dermatología",
+    "active_ingredient": "Sulfadiazina argéntica",
+    "description": "Antimicrobiano para quemaduras",
+    "stock": 25
+  },
+  {
+    "ean": "8470004567975",
+    "name": "Thrombocid pomada 60g",
+    "price": 10.20,
+    "category": "Dermatología",
+    "active_ingredient": "Pentosano polisulfato",
+    "description": "Para hematomas y contusiones",
+    "stock": 30
+  },
+  {
+    "ean": "8470004567982",
+    "name": "Urgo Filmogel 3.25ml",
+    "price": 9.95,
+    "category": "Dermatología",
+    "active_ingredient": "Polímero filmógeno",
+    "description": "Apósito líquido para heridas",
+    "stock": 35
+  },
+  {
+    "ean": "8470005678901",
+    "name": "Flutox jarabe 200ml",
+    "price": 6.50,
+    "category": "Respiratorio",
+    "active_ingredient": "Acetilcisteína",
+    "description": "Mucolítico para tos productiva",
+    "stock": 40
+  },
+  {
+    "ean": "8470005678918",
+    "name": "Bisolvon 8mg 20 comprimidos",
+    "price": 5.80,
+    "category": "Respiratorio",
+    "active_ingredient": "Bromhexina",
+    "description": "Expectorante y mucolítico",
+    "stock": 35
+  },
+  {
+    "ean": "8470005678925",
+    "name": "Frenadol 10 sobres",
+    "price": 7.95,
+    "category": "Respiratorio",
+    "active_ingredient": "Paracetamol + Clorfenamina",
+    "description": "Antigripal completo",
+    "stock": 50
+  },
+  {
+    "ean": "8470005678932",
+    "name": "Rhinomer spray nasal 135ml",
+    "price": 8.50,
+    "category": "Respiratorio",
+    "active_ingredient": "Agua de mar",
+    "description": "Higiene y descongestión nasal",
+    "stock": 45
+  },
+  {
+    "ean": "8470005678949",
+    "name": "Utabon pastillas 24 unidades",
+    "price": 4.95,
+    "category": "Respiratorio",
+    "active_ingredient": "Benzocaína",
+    "description": "Anestésico para dolor de garganta",
+    "stock": 55
+  },
+  {
+    "ean": "8470005678956",
+    "name": "Cinfatos jarabe 150ml",
+    "price": 6.20,
+    "category": "Respiratorio",
+    "active_ingredient": "Cloperastina",
+    "description": "Antitusivo para tos seca",
+    "stock": 30
+  },
+  {
+    "ean": "8470005678963",
+    "name": "Vick Vaporub pomada 50g",
+    "price": 5.50,
+    "category": "Respiratorio",
+    "active_ingredient": "Mentol + Eucalipto",
+    "description": "Descongestionante tópico",
+    "stock": 40
+  },
+  {
+    "ean": "8470005678970",
+    "name": "Strefen 8.75mg 24 pastillas",
+    "price": 9.50,
+    "category": "Respiratorio",
+    "active_ingredient": "Flurbiprofeno",
+    "description": "Antiinflamatorio para garganta",
+    "stock": 25
+  },
+  {
+    "ean": "8470006789012",
+    "name": "Polaramine 2mg 20 comprimidos",
+    "price": 4.80,
+    "category": "Antihistamínicos",
+    "active_ingredient": "Dexclorfeniramina",
+    "description": "Antihistamínico para alergias",
+    "stock": 35
+  },
+  {
+    "ean": "8470006789029",
+    "name": "Aerius 5mg 20 comprimidos",
+    "price": 11.50,
+    "category": "Antihistamínicos",
+    "active_ingredient": "Desloratadina",
+    "description": "Antialérgico sin somnolencia",
+    "stock": 30
+  },
+  {
+    "ean": "8470006789036",
+    "name": "Cetirizina 10mg 20 comprimidos",
+    "price": 3.95,
+    "category": "Antihistamínicos",
+    "active_ingredient": "Cetirizina",
+    "description": "Antihistamínico para rinitis alérgica",
+    "stock": 45
+  },
+  {
+    "ean": "8470006789043",
+    "name": "Ebastel 10mg 20 comprimidos",
+    "price": 9.80,
+    "category": "Antihistamínicos",
+    "active_ingredient": "Ebastina",
+    "description": "Antialérgico de larga duración",
+    "stock": 25
+  },
+  {
+    "ean": "8470006789050",
+    "name": "Loratadina 10mg 30 comprimidos",
+    "price": 4.50,
+    "category": "Antihistamínicos",
+    "active_ingredient": "Loratadina",
+    "description": "Antihistamínico para alergias estacionales",
+    "stock": 40
+  },
+  {
+    "ean": "8470006789067",
+    "name": "Bilaxten 20mg 20 comprimidos",
+    "price": 12.95,
+    "category": "Antihistamínicos",
+    "active_ingredient": "Bilastina",
+    "description": "Antialérgico potente sin somnolencia",
+    "stock": 20
+  },
+  {
+    "ean": "8470007890123",
+    "name": "Refresh lágrimas 15ml",
+    "price": 8.50,
+    "category": "Oftalmología",
+    "active_ingredient": "Carmelosa sódica",
+    "description": "Lágrimas artificiales para ojo seco",
+    "stock": 40
+  },
+  {
+    "ean": "8470007890130",
+    "name": "Systane Ultra 10ml",
+    "price": 10.95,
+    "category": "Oftalmología",
+    "active_ingredient": "Polietilenglicol",
+    "description": "Lubricante ocular avanzado",
+    "stock": 30
+  },
+  {
+    "ean": "8470007890147",
+    "name": "Oftalmowell colirio 10ml",
+    "price": 6.50,
+    "category": "Oftalmología",
+    "active_ingredient": "Hamamelis + Eufrasia",
+    "description": "Descongestionante ocular natural",
+    "stock": 35
+  },
+  {
+    "ean": "8470007890154",
+    "name": "Vizol colirio 15ml",
+    "price": 5.95,
+    "category": "Oftalmología",
+    "active_ingredient": "Nafazolina",
+    "description": "Descongestionante para ojos irritados",
+    "stock": 25
+  },
+  {
+    "ean": "8470007890161",
+    "name": "Hyabak 10ml",
+    "price": 12.50,
+    "category": "Oftalmología",
+    "active_ingredient": "Hialuronato sódico",
+    "description": "Lubricante ocular intensivo",
+    "stock": 20
+  },
+  {
+    "ean": "8470007890178",
+    "name": "Ocusan gotas oftálmicas 10ml",
+    "price": 7.80,
+    "category": "Oftalmología",
+    "active_ingredient": "Ácido hialurónico",
+    "description": "Hidratación ocular prolongada",
+    "stock": 30
+  },
+  {
+    "ean": "8470008901234",
+    "name": "Lacer clorhexidina 500ml",
+    "price": 6.95,
+    "category": "Higiene bucal",
+    "active_ingredient": "Clorhexidina 0.12%",
+    "description": "Colutorio antiséptico",
+    "stock": 40
+  },
+  {
+    "ean": "8470008901241",
+    "name": "Listerine total care 500ml",
+    "price": 5.50,
+    "category": "Higiene bucal",
+    "active_ingredient": "Eucaliptol + Timol",
+    "description": "Enjuague bucal completo",
+    "stock": 50
+  },
+  {
+    "ean": "8470008901258",
+    "name": "Bexident encías gel 75ml",
+    "price": 8.95,
+    "category": "Higiene bucal",
+    "active_ingredient": "Clorhexidina + Triclosan",
+    "description": "Tratamiento de encías sensibles",
+    "stock": 30
+  },
+  {
+    "ean": "8470008901265",
+    "name": "Halita spray bucal 15ml",
+    "price": 7.50,
+    "category": "Higiene bucal",
+    "active_ingredient": "Cloruro de cetilpiridinio",
+    "description": "Contra halitosis",
+    "stock": 25
+  },
+  {
+    "ean": "8470008901272",
+    "name": "Sensodyne Repair 75ml",
+    "price": 5.95,
+    "category": "Higiene bucal",
+    "active_ingredient": "Novamin",
+    "description": "Pasta para dientes sensibles",
+    "stock": 45
+  },
+  {
+    "ean": "8470008901289",
+    "name": "Kin B5 pasta dentífrica 125ml",
+    "price": 6.50,
+    "category": "Higiene bucal",
+    "active_ingredient": "Provitamina B5",
+    "description": "Protección de encías",
+    "stock": 35
+  },
+  {
+    "ean": "8470008901296",
+    "name": "GUM Paroex colutorio 500ml",
+    "price": 9.95,
+    "category": "Higiene bucal",
+    "active_ingredient": "Clorhexidina 0.12%",
+    "description": "Enjuague periodontal",
+    "stock": 20
+  },
+  {
+    "ean": "8470008901302",
+    "name": "Vitis Blanqueadora 100ml",
+    "price": 7.20,
+    "category": "Higiene bucal",
+    "active_ingredient": "Pirofosfatos",
+    "description": "Pasta blanqueadora dental",
+    "stock": 40
+  },
+  {
+    "ean": "8470009012345",
+    "name": "Pilexil champú anticaída 300ml",
+    "price": 12.95,
+    "category": "Cuidado capilar",
+    "active_ingredient": "Serenoa serrulata",
+    "description": "Champú anticaída fortificante",
+    "stock": 35
+  },
+  {
+    "ean": "8470009012352",
+    "name": "Kelual DS champú 100ml",
+    "price": 11.50,
+    "category": "Cuidado capilar",
+    "active_ingredient": "Piroctona olamina",
+    "description": "Tratamiento dermatitis seborreica",
+    "stock": 25
+  },
+  {
+    "ean": "8470009012369",
+    "name": "Vichy Dercos anticaspa 200ml",
+    "price": 13.95,
+    "category": "Cuidado capilar",
+    "active_ingredient": "Sulfuro de selenio",
+    "description": "Champú anticaspa intensivo",
+    "stock": 30
+  },
+  {
+    "ean": "8470009012376",
+    "name": "Isdin Lambdapil champú 400ml",
+    "price": 14.50,
+    "category": "Cuidado capilar",
+    "active_ingredient": "Serenoa serrulata",
+    "description": "Champú anticaída",
+    "stock": 20
+  },
+  {
+    "ean": "8470009012383",
+    "name": "Iraltone DS champú 200ml",
+    "price": 12.80,
+    "category": "Cuidado capilar",
+    "active_ingredient": "Piroctona olamina",
+    "description": "Tratamiento dermatitis seborreica",
+    "stock": 25
+  },
+  {
+    "ean": "8470009012390",
+    "name": "Ducray Anaphase champú 400ml",
+    "price": 15.95,
+    "category": "Cuidado capilar",
+    "active_ingredient": "Complejo vitamínico",
+    "description": "Champú complemento anticaída",
+    "stock": 30
+  },
+  {
+    "ean": "8470009012406",
+    "name": "Klorane Cuprate champú 400ml",
+    "price": 10.50,
+    "category": "Cuidado capilar",
+    "active_ingredient": "Extracto de ortiga",
+    "description": "Champú sebo-regulador",
+    "stock": 35
+  },
+  {
+    "ean": "8470009012413",
+    "name": "Rene Furterer Forticea 200ml",
+    "price": 16.50,
+    "category": "Cuidado capilar",
+    "active_ingredient": "Aceites esenciales",
+    "description": "Champú estimulante anticaída",
+    "stock": 15
+  },
+  {
+    "ean": "8470010123456",
+    "name": "Apiretal 100mg/ml 60ml",
+    "price": 3.95,
+    "category": "Infantil",
+    "active_ingredient": "Paracetamol",
+    "description": "Antitérmico pediátrico oral",
+    "stock": 60
+  },
+  {
+    "ean": "8470010123463",
+    "name": "Dalsy 20mg/ml 200ml",
+    "price": 4.50,
+    "category": "Infantil",
+    "active_ingredient": "Ibuprofeno",
+    "description": "Antiinflamatorio sabor naranja",
+    "stock": 55
+  },
+  {
+    "ean": "8470010123470",
+    "name": "Aquilea Gases 60ml gotas",
+    "price": 8.95,
+    "category": "Infantil",
+    "active_ingredient": "Simeticona",
+    "description": "Anti-gases para bebés",
+    "stock": 40
+  },
+  {
+    "ean": "8470010123487",
+    "name": "Mustela crema pañal 100ml",
+    "price": 7.50,
+    "category": "Infantil",
+    "active_ingredient": "Óxido de zinc",
+    "description": "Prevención dermatitis del pañal",
+    "stock": 45
+  },
+  {
+    "ean": "8470010123494",
+    "name": "Reuteri gotas probióticas 5ml",
+    "price": 12.95,
+    "category": "Infantil",
+    "active_ingredient": "Lactobacillus reuteri",
+    "description": "Probiótico para cólicos del lactante",
+    "stock": 30
+  },
+  {
+    "ean": "8470010123500",
+    "name": "Dentabrit First Teeth 50ml",
+    "price": 5.50,
+    "category": "Infantil",
+    "active_ingredient": "Xilitol",
+    "description": "Gel dental primeros dientes",
+    "stock": 35
+  },
+  {
+    "ean": "8470010123517",
+    "name": "Suero oral Sueroral 5 sobres",
+    "price": 3.80,
+    "category": "Infantil",
+    "active_ingredient": "Sales de rehidratación",
+    "description": "Rehidratación en gastroenteritis",
+    "stock": 50
+  },
+  {
+    "ean": "8470010123524",
+    "name": "Boiron Camilia 30 monodosis",
+    "price": 9.95,
+    "category": "Infantil",
+    "active_ingredient": "Chamomilla vulgaris",
+    "description": "Alivio dentición bebés",
+    "stock": 25
+  },
+  {
+    "ean": "8470010123531",
+    "name": "Nenuco talco 200g",
+    "price": 4.20,
+    "category": "Infantil",
+    "active_ingredient": "Talco",
+    "description": "Talco para bebé",
+    "stock": 40
+  },
+  {
+    "ean": "8470010123548",
+    "name": "Espidifen niños 20mg/ml 200ml",
+    "price": 4.95,
+    "category": "Infantil",
+    "active_ingredient": "Ibuprofeno arginina",
+    "description": "Antiinflamatorio pediátrico",
+    "stock": 45
+  },
+  {
+    "ean": "8470011234567",
+    "name": "Tiritas surtidas 20 unidades",
+    "price": 2.95,
+    "category": "Primeros auxilios",
+    "active_ingredient": "Apósito adhesivo",
+    "description": "Tiritas variadas para heridas pequeñas",
+    "stock": 70
+  },
+  {
+    "ean": "8470011234574",
+    "name": "Agua oxigenada 250ml",
+    "price": 1.50,
+    "category": "Primeros auxilios",
+    "active_ingredient": "Peróxido de hidrógeno 3%",
+    "description": "Antiséptico y desinfectante",
+    "stock": 60
+  },
+  {
+    "ean": "8470011234581",
+    "name": "Alcohol 96º 250ml",
+    "price": 1.80,
+    "category": "Primeros auxilios",
+    "active_ingredient": "Etanol 96%",
+    "description": "Desinfectante de uso tópico",
+    "stock": 55
+  },
+  {
+    "ean": "8470011234598",
+    "name": "Venda elástica 10cm x 4m",
+    "price": 3.50,
+    "category": "Primeros auxilios",
+    "active_ingredient": "Venda cohesiva",
+    "description": "Venda para sujeción",
+    "stock": 45
+  },
+  {
+    "ean": "8470011234604",
+    "name": "Gasas estériles 20x20 5 sobres",
+    "price": 2.80,
+    "category": "Primeros auxilios",
+    "active_ingredient": "Gasa estéril",
+    "description": "Apósitos para curas",
+    "stock": 50
+  },
+  {
+    "ean": "8470011234611",
+    "name": "Termómetro digital",
+    "price": 8.95,
+    "category": "Primeros auxilios",
+    "active_ingredient": "Termómetro",
+    "description": "Medición rápida de temperatura",
+    "stock": 30
+  },
+  {
+    "ean": "8470011234628",
+    "name": "Esparadrapo hipoalergénico 5m",
+    "price": 2.50,
+    "category": "Primeros auxilios",
+    "active_ingredient": "Esparadrapo",
+    "description": "Fijación suave de apósitos",
+    "stock": 40
+  },
+  {
+    "ean": "8470011234635",
+    "name": "Guantes nitrilo 100 unidades",
+    "price": 9.95,
+    "category": "Primeros auxilios",
+    "active_ingredient": "Guantes desechables",
+    "description": "Protección e higiene",
+    "stock": 25
+  },
+  {
+    "ean": "8470012345678",
+    "name": "Aquilea Articulaciones 375 tabletas",
+    "price": 18.95,
+    "category": "Deportivos",
+    "active_ingredient": "Colágeno + Magnesio",
+    "description": "Suplemento para articulaciones",
+    "stock": 25
+  },
+  {
+    "ean": "8470012345685",
+    "name": "Voltaren Emulgel Sport 100g",
+    "price": 12.50,
+    "category": "Deportivos",
+    "active_ingredient": "Diclofenaco",
+    "description": "Gel antiinflamatorio deportivo",
+    "stock": 30
+  },
+  {
+    "ean": "8470012345692",
+    "name": "Fisiocrem gel 250ml",
+    "price": 15.95,
+    "category": "Deportivos",
+    "active_ingredient": "Árnica + Hipérico",
+    "description": "Gel natural para masaje deportivo",
+    "stock": 20
+  },
+  {
+    "ean": "8470012345708",
+    "name": "Reflex spray frío 400ml",
+    "price": 9.50,
+    "category": "Deportivos",
+    "active_ingredient": "Mentol",
+    "description": "Spray frío para lesiones",
+    "stock": 35
+  },
+  {
+    "ean": "8470012345715",
+    "name": "Vendas frío-calor reutilizables",
+    "price": 11.95,
+    "category": "Deportivos",
+    "active_ingredient": "Gel térmico",
+    "description": "Terapia de temperatura",
+    "stock": 15
+  },
+  {
+    "ean": "8470012345722",
+    "name": "Radio Salil antiinflamatorio 30g",
+    "price": 7.80,
+    "category": "Deportivos",
+    "active_ingredient": "Salicilato de metilo",
+    "description": "Pomada calor para dolores musculares",
+    "stock": 40
+  }
+]
