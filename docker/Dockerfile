@@ -9,6 +9,8 @@ ENV PYTHONUNBUFFERED=1 \
 RUN apt-get update && apt-get install -y \
     python3-tk \
     libevdev-dev \
+    linux-libc-dev \
+    build-essential \
     sqlite3 \
     x11-apps \
     && rm -rf /var/lib/apt/lists/*
