@@ -26,7 +26,7 @@ class Config:
     CLAUDE_MODEL: str = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-20250514")
     MAX_TOKENS: int = int(os.getenv("MAX_TOKENS", "1024"))
     TEMPERATURE: float = float(os.getenv("TEMPERATURE", "0.3"))
-    API_TIMEOUT: int = int(os.getenv("API_TIMEOUT", "10"))
+    API_TIMEOUT: float = float(os.getenv("API_TIMEOUT", "30.0"))
 
     # Cache Configuration
     CACHE_ENABLED: bool = os.getenv("CACHE_ENABLED", "true").lower() == "true"

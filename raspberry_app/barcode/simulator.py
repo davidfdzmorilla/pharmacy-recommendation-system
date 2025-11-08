@@ -46,7 +46,7 @@ class BarcodeSimulator(LoggerMixin):
         self.barcode_entry: Optional[tk.Entry] = None
         self.product_combo: Optional[ttk.Combobox] = None
         self.history_listbox: Optional[tk.Listbox] = None
-        self.status_label: Optional[tk.Label] = None
+        self.status_label: Optional[tk.Label] = None  # Using tk.Label for fg support
 
         self.scan_history: List[str] = []
         self.running = False
@@ -234,8 +234,8 @@ class BarcodeSimulator(LoggerMixin):
         status_frame = ttk.Frame(main_frame)
         status_frame.grid(row=4, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(10, 0))
 
-        self.status_label = ttk.Label(status_frame, text="Ready to scan...",
-                                     font=("Arial", 10), foreground="#17a2b8")
+        self.status_label = tk.Label(status_frame, text="Ready to scan...",
+                                     font=("Arial", 10), fg="#17a2b8")
         self.status_label.grid(row=0, column=0, sticky=tk.W)
 
         # Configure grid weights

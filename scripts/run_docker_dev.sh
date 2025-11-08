@@ -32,6 +32,12 @@ echo "=== Iniciando contenedor Docker ==="
 echo "Presiona Ctrl+C para detener"
 echo ""
 
+# Cargar variables del .env
+if [ -f ".env" ]; then
+    export $(cat .env | grep -v '^#' | grep -v '^$' | xargs)
+    echo "✅ Variables de entorno cargadas desde .env"
+fi
+
 # Ejecutar app
 cd docker
 docker-compose -f docker-compose.dev.yml up

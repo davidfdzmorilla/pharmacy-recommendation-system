@@ -11,6 +11,7 @@ from collections import defaultdict
 
 from raspberry_app.config import config
 from raspberry_app.database.db_manager import DatabaseManager
+from raspberry_app.database.models import Product
 from raspberry_app.api.cache_manager import CacheManager
 from raspberry_app.api.claude_client import ClaudeClient
 from raspberry_app.barcode.simulator import BarcodeSimulator
@@ -74,9 +75,10 @@ class MainWindow(LoggerMixin):
 
         self.create_widgets()
 
-        # Start simulator if in simulation mode
-        if config.SIMULATION_MODE:
-            self.open_simulator()
+        # Note: Simulator can be opened manually via button
+        # Auto-open can cause issues with multiple Tk windows in Docker
+        # if config.SIMULATION_MODE:
+        #     self.open_simulator()
 
         self.logger.info("Main window initialized")
 
@@ -134,8 +136,8 @@ class MainWindow(LoggerMixin):
 
         self.cart_tree.column('quantity', width=60, anchor='center')
         self.cart_tree.column('name', width=250)
-        self.cart_tree.column('price', width=80, anchor='right')
-        self.cart_tree.column('subtotal', width=80, anchor='right')
+        self.cart_tree.column('price', width=80, anchor='e')
+        self.cart_tree.column('subtotal', width=80, anchor='e')
 
         self.cart_tree.pack(side='left', fill='both', expand=True)
 
@@ -264,15 +266,15 @@ class MainWindow(LoggerMixin):
         # Add to cart
         self.add_to_cart(product)
 
-    def add_to_cart(self, product: Dict):
+    def add_to_cart(self, product: Product):
         """
         Add product to cart.
 
         Args:
-            product: Product dict from database
+            product: Product dataclass from database
         """
         # Check if already in cart
-        product_id = product['id']
+        product_id = product.id
 
         if product_id in self.cart_counts:
             # Increment quantity
@@ -285,7 +287,7 @@ class MainWindow(LoggerMixin):
         self.update_cart_display()
         self.schedule_recommendation_update()
 
-        self.logger.info(f"Added to cart: {product['name']}")
+        self.logger.info(f"Added to cart: {product.name}")
 
     def update_cart_display(self):
         """Update cart treeview and total."""
@@ -296,14 +298,14 @@ class MainWindow(LoggerMixin):
         # Add items
         total = 0.0
         for product in self.cart:
-            product_id = product['id']
+            product_id = product.id
             quantity = self.cart_counts[product_id]
-            price = product['price']
+            price = product.price
             subtotal = price * quantity
 
             self.cart_tree.insert('', 'end', values=(
                 quantity,
-                product['name'],
+                product.name,
                 f"€{price:.2f}",
                 f"€{subtotal:.2f}"
             ))
@@ -359,10 +361,10 @@ class MainWindow(LoggerMixin):
             cart_items = []
             for product in self.cart:
                 cart_items.append({
-                    'name': product['name'],
-                    'category': product['category'],
-                    'active_ingredient': product['active_ingredient'],
-                    'price': product['price']
+                    'name': product.name,
+                    'category': product.category,
+                    'active_ingredient': product.active_ingredient,
+                    'price': product.price
                 })
 
             # Call API
@@ -496,7 +498,7 @@ class MainWindow(LoggerMixin):
 
         # Remove from cart
         product = self.cart[index]
-        product_id = product['id']
+        product_id = product.id
 
         if self.cart_counts[product_id] > 1:
             # Decrement quantity
@@ -509,7 +511,7 @@ class MainWindow(LoggerMixin):
         self.update_cart_display()
         self.schedule_recommendation_update()
 
-        self.logger.info(f"Removed from cart: {product['name']}")
+        self.logger.info(f"Removed from cart: {product.name}")
 
     def new_sale(self):
         """Clear cart for new sale."""
@@ -554,14 +556,14 @@ class MainWindow(LoggerMixin):
             sale_id = self.db.create_sale(total, len(self.cart))
 
             for product in self.cart:
-                quantity = self.cart_counts[product['id']]
-                subtotal = product['price'] * quantity
+                quantity = self.cart_counts[product.id]
+                subtotal = product.price * quantity
 
                 self.db.add_sale_item(
                     sale_id,
-                    product['id'],
+                    product.id,
                     quantity,
-                    product['price'],
+                    product.price,
                     subtotal
                 )
 
@@ -588,7 +590,7 @@ class MainWindow(LoggerMixin):
         # Load sample products
         products = self.db.get_all_products()
         sample_products = [
-            {'ean': p['ean'], 'name': p['name']}
+            {'ean': p.ean, 'name': p.name}
             for p in products[:20]  # First 20 products
         ]
 
@@ -597,12 +599,14 @@ class MainWindow(LoggerMixin):
             sample_products=sample_products
         )
 
+        # Start simulator (creates root window)
+        self.simulator.start()
+
         # Cleanup on close
         def on_simulator_close():
             self.simulator = None
 
         self.simulator.root.protocol("WM_DELETE_WINDOW", on_simulator_close)
-        self.simulator.start()
 
     def show_stats(self):
         """Show cache and API statistics."""
