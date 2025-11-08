@@ -26,6 +26,28 @@ Tu rol es analizar el carrito de compra del cliente y sugerir 3-5 productos comp
 2. Seguros y apropiados para uso conjunto
 3. Comúnmente recomendados en farmacias españolas
 
+⚠️ RESTRICCIÓN LEGAL CRÍTICA - MEDICAMENTOS CON RECETA:
+SOLO puedes recomendar productos de VENTA LIBRE (OTC - Over The Counter).
+NUNCA recomiendes medicamentos que requieran receta médica según la legislación española.
+
+MEDICAMENTOS PROHIBIDOS EN RECOMENDACIONES (requieren receta):
+- Antibióticos (Amoxicilina, Azitromicina, Ciprofloxacino, etc.)
+- NSAIDs de alta potencia (Enantyum/Dexketoprofeno, Nolotil/Metamizol)
+- Opioides y combinaciones con codeína
+- Antidepresivos y ansiolíticos
+- Antiinflamatorios de prescripción (Voltadol parches, Diclofenaco oral >50mg)
+- Antihistamínicos de nueva generación con receta (Aerius, Bilaxten)
+- Mucolíticos de prescripción (Bisolvon oral)
+- Antitusivos con codeína o dextrometorfano
+- PPIs de larga duración (Omeprazol >14 días en envase)
+- Antieméticos (Primperan/Metoclopramida)
+- Antibióticos tópicos (Fucidine, Silvederma)
+
+{OTC_CATALOG}
+
+**IMPORTANTE**: Debes recomendar ÚNICAMENTE productos de este catálogo usando los NOMBRES EXACTOS.
+NO inventes variantes, dosis o formatos diferentes. Si un producto no está en este catálogo, NO lo recomiendes.
+
 REGLAS IMPORTANTES:
 - NO recomiendes productos de la misma categoría que ya están en el carrito
 - NO recomiendes productos con el mismo principio activo
@@ -33,12 +55,12 @@ REGLAS IMPORTANTES:
 - Considera efectos secundarios y contraindicaciones
 - Enfoca en prevención y cuidado complementario
 
-EJEMPLOS DE RECOMENDACIONES APROPIADAS:
-- Con antiinflamatorios (AINE): Protectores gástricos (omeprazol)
-- Con antibióticos: Probióticos para flora intestinal
-- Con analgésicos: Vitaminas del grupo B para neuropatía
-- Con antihistamínicos: Hidratante nasal o colirios
-- Con antidiarreicos: Suero oral rehidratante
+EJEMPLOS DE RECOMENDACIONES APROPIADAS (SOLO OTC):
+- Con Ibuprofeno 400mg: Almax o Gaviscon (protección gástrica OTC)
+- Con Paracetamol: Vitamina C, Complejo B
+- Con antihistamínicos OTC: Spray nasal de agua de mar, lágrimas artificiales
+- Con productos respiratorios: Propóleo, Vitamina C, miel
+- Con digestivos: Probióticos, fibra vegetal
 
 FORMATO DE RESPUESTA:
 Debes responder ÚNICAMENTE con un objeto JSON válido con esta estructura:
@@ -63,6 +85,52 @@ PRIORIDADES:
 
 NO incluyas markdown, explicaciones adicionales, ni texto fuera del JSON.
 """
+
+    @staticmethod
+    def generate_otc_catalog(otc_products: List[Dict]) -> str:
+        """
+        Generate dynamic OTC catalog from database products.
+
+        Args:
+            otc_products: List of OTC products from database, each with:
+                - name: Product name
+                - category: Product category
+
+        Returns:
+            Formatted catalog string for system prompt
+
+        Example:
+            >>> products = [
+            ...     {"name": "Almax 1g", "category": "Digestivos"},
+            ...     {"name": "Vitamina C 1000mg", "category": "Vitaminas"}
+            ... ]
+            >>> catalog = PromptBuilder.generate_otc_catalog(products)
+        """
+        if not otc_products:
+            return "CATÁLOGO DE PRODUCTOS OTC DISPONIBLES: (vacío)"
+
+        # Group products by category
+        products_by_category = {}
+        for product in otc_products:
+            category = product.get('category', 'Sin categoría')
+            name = product.get('name', 'Producto desconocido')
+
+            if category not in products_by_category:
+                products_by_category[category] = []
+
+            products_by_category[category].append(name)
+
+        # Build catalog text
+        catalog_lines = ["CATÁLOGO DE PRODUCTOS OTC DISPONIBLES (USA SOLO ESTOS NOMBRES EXACTOS):"]
+        catalog_lines.append("")
+
+        for category in sorted(products_by_category.keys()):
+            catalog_lines.append(f"{category} OTC:")
+            for product_name in sorted(products_by_category[category]):
+                catalog_lines.append(f"- {product_name}")
+            catalog_lines.append("")
+
+        return "\n".join(catalog_lines)
 
     @staticmethod
     def build_recommendation_prompt(cart_items: List[Dict]) -> str:

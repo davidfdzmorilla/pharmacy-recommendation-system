@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS products (
     active_ingredient TEXT,
     description TEXT,
     stock INTEGER NOT NULL DEFAULT 0 CHECK(stock >= 0),
+    requires_prescription BOOLEAN NOT NULL DEFAULT 0,  -- Spanish regulation compliance
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -22,6 +23,7 @@ CREATE TABLE IF NOT EXISTS products (
 CREATE INDEX IF NOT EXISTS idx_products_ean ON products(ean);
 CREATE INDEX IF NOT EXISTS idx_products_category ON products(category);
 CREATE INDEX IF NOT EXISTS idx_products_active_ingredient ON products(active_ingredient);
+CREATE INDEX IF NOT EXISTS idx_products_prescription ON products(requires_prescription);
 
 -- Sales table: completed sales transactions
 CREATE TABLE IF NOT EXISTS sales (

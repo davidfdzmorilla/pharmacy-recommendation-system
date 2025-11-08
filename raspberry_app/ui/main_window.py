@@ -509,7 +509,23 @@ class MainWindow(LoggerMixin):
             self.cart.pop(index)
 
         self.update_cart_display()
-        self.schedule_recommendation_update()
+
+        # Check if cart is empty and clear recommendations immediately
+        if not self.cart:
+            # Cancel any pending debounce timer
+            if self.debounce_timer:
+                self.root.after_cancel(self.debounce_timer)
+                self.debounce_timer = None
+
+            # Clear recommendations immediately
+            self.clear_recommendations()
+            self.status_label.config(
+                text="Agregue productos al carrito",
+                style='Empty.TLabel'
+            )
+        else:
+            # Cart still has items, schedule update with debounce
+            self.schedule_recommendation_update()
 
         self.logger.info(f"Removed from cart: {product.name}")
 

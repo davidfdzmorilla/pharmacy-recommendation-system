@@ -189,11 +189,11 @@ def test_parse_clean_json():
     {
     "recommendations": [
             {
-                "product_name": "Omeprazol 20mg",
+                "product_name": "Almax 1g 30 comprimidos masticables",
             "category": "Digestivos",
-            "reason": "Protección gástrica",
+            "reason": "Antiácido OTC con NSAIDs",
             "priority": "high",
-            "estimated_price": "8.50"
+            "estimated_price": "6.50"
         }
     ],
     "analysis": "Carrito con analgésicos"
@@ -205,7 +205,7 @@ def test_parse_clean_json():
     assert result is not None
     assert "recommendations" in result
     assert len(result["recommendations"]) == 1
-    assert result["recommendations"][0]["product_name"] == "Omeprazol 20mg"
+    assert result["recommendations"][0]["product_name"] == "Almax 1g 30 comprimidos masticables"
 
 
 def test_parse_json_in_markdown():
@@ -318,22 +318,22 @@ def mock_anthropic_response():
         Mock(text=json.dumps({
             "recommendations": [
                 {
-                    "product_name": "Omeprazol 20mg",
+                    "product_name": "Almax 1g 30 comprimidos masticables",
                 "category": "Digestivos",
-                "reason": "Protector gástrico con AINE",
+                "reason": "Antiácido OTC seguro con AINE",
                 "priority": "high",
-                "estimated_price": "8.50"
+                "estimated_price": "6.50"
             }
         ],
-        "analysis": "Carrito con antiinflamatorios"
+        "analysis": "Carrito con antiinflamatorios, recomiendo protector gástrico OTC"
     }))
     ]
     return mock_response
 
 
-def test_cart_hash_generation(mock_cache):
+def test_cart_hash_generation(mock_cache, db_manager):
     """Test cart hash generation is consistent."""
-    client = ClaudeClient(mock_cache, api_key='test-key')
+    client = ClaudeClient(mock_cache, api_key='test-key', db_manager=db_manager)
 
     cart1 = [
     {"name": "A", "category": "C1", "active_ingredient": "I1", "price": 5.0}
@@ -349,9 +349,9 @@ def test_cart_hash_generation(mock_cache):
     assert len(hash1) == 32  # MD5 hash length
 
 
-def test_cart_hash_order_independence(mock_cache):
+def test_cart_hash_order_independence(mock_cache, db_manager):
     """Test hash is same regardless of cart item order."""
-    client = ClaudeClient(mock_cache, api_key='test-key')
+    client = ClaudeClient(mock_cache, api_key='test-key', db_manager=db_manager)
 
     cart1 = [
     {"name": "A", "category": "C1", "active_ingredient": "I1", "price": 5.0},
@@ -369,14 +369,14 @@ def test_cart_hash_order_independence(mock_cache):
 
 
 @patch('raspberry_app.api.claude_client.Anthropic')
-def test_cache_hit(mock_anthropic_class, mock_cache, mock_anthropic_response):
+def test_cache_hit(mock_anthropic_class, mock_cache, mock_anthropic_response, populated_db):
     """Test that second call uses cache."""
     # Setup mock
     mock_client = MagicMock()
     mock_client.messages.create.return_value = mock_anthropic_response
     mock_anthropic_class.return_value = mock_client
 
-    client = ClaudeClient(mock_cache, api_key='test-key')
+    client = ClaudeClient(mock_cache, api_key='test-key', db_manager=populated_db)
 
     cart = [
     {"name": "Ibuprofeno", "category": "Analgésicos",
@@ -398,7 +398,7 @@ def test_cache_hit(mock_anthropic_class, mock_cache, mock_anthropic_response):
 
 
 @patch('raspberry_app.api.claude_client.Anthropic')
-def test_cache_miss_different_cart(mock_anthropic_class, mock_cache, mock_anthropic_response):
+def test_cache_miss_different_cart(mock_anthropic_class, mock_cache, mock_anthropic_response, db_manager):
     """Test different carts generate different hashes."""
     mock_client = MagicMock()
     mock_client.messages.create.return_value = mock_anthropic_response
@@ -419,7 +419,7 @@ def test_cache_miss_different_cart(mock_anthropic_class, mock_cache, mock_anthro
 
 
 @patch('raspberry_app.api.claude_client.Anthropic')
-def test_force_refresh(mock_anthropic_class, mock_cache, mock_anthropic_response):
+def test_force_refresh(mock_anthropic_class, mock_cache, mock_anthropic_response, db_manager):
     """Test force_refresh bypasses cache."""
     mock_client = MagicMock()
     mock_client.messages.create.return_value = mock_anthropic_response
@@ -494,7 +494,7 @@ def test_clear_cache_method(mock_cache):
 # ==================== INTEGRATION TESTS ====================
 
 @patch('raspberry_app.api.claude_client.Anthropic')
-def test_full_workflow(mock_anthropic_class, mock_anthropic_response):
+def test_full_workflow(mock_anthropic_class, mock_anthropic_response, db_manager):
     """Test complete workflow: cart → hash → API → parse → cache."""
     mock_client = MagicMock()
     mock_client.messages.create.return_value = mock_anthropic_response

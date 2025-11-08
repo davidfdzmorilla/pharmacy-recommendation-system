@@ -19,6 +19,7 @@ class Product:
     active_ingredient: Optional[str] = None
     description: Optional[str] = None
     stock: int = 0
+    requires_prescription: bool = False  # Spanish regulation compliance
     id: Optional[int] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
@@ -43,6 +44,7 @@ class Product:
             active_ingredient=row["active_ingredient"],
             description=row["description"],
             stock=row["stock"],
+            requires_prescription=bool(row["requires_prescription"]),
             created_at=datetime.fromisoformat(row["created_at"]) if row["created_at"] else None,
             updated_at=datetime.fromisoformat(row["updated_at"]) if row["updated_at"] else None
         )

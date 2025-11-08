@@ -121,12 +121,35 @@ def sample_products():
         Product(
             id=None,
             ean="8470003456786",
-            name="Omeprazol 20mg 28 cápsulas",
-            price=8.50,
+            name="Almax 1g 30 comprimidos masticables",
+            price=6.50,
             category="Digestivos",
-            active_ingredient="Omeprazol",
-            description="Protector gástrico",
-            stock=30
+            active_ingredient="Almagato",
+            description="Antiácido OTC",
+            stock=30,
+            requires_prescription=False
+        ),
+        Product(
+            id=None,
+            ean="8470004567891",
+            name="Vitamina C 1000mg 20 comprimidos",
+            price=6.95,
+            category="Vitaminas",
+            active_ingredient="Ácido ascórbico",
+            description="Suplemento vitamínico",
+            stock=40,
+            requires_prescription=False
+        ),
+        Product(
+            id=None,
+            ean="8470005678902",
+            name="Crema antiinflamatoria 60g",
+            price=7.50,
+            category="Dermatología",
+            active_ingredient="Diclofenaco tópico",
+            description="Antiinflamatorio tópico OTC",
+            stock=25,
+            requires_prescription=False
         )
     ]
 
@@ -165,11 +188,11 @@ def mock_anthropic_response():
     return {
         "recommendations": [
             {
-                "product_name": "Omeprazol 20mg 28 cápsulas",
+                "product_name": "Almax 1g 30 comprimidos masticables",
                 "category": "Digestivos",
-                "reason": "Protector gástrico recomendado con antiinflamatorios para prevenir lesiones gástricas",
+                "reason": "Protector gástrico OTC recomendado con antiinflamatorios para prevenir lesiones gástricas",
                 "priority": "high",
-                "estimated_price": "8.50"
+                "estimated_price": "6.50"
             },
             {
                 "product_name": "Vitamina C 1000mg 20 comprimidos",
@@ -186,20 +209,22 @@ def mock_anthropic_response():
                 "estimated_price": "7.50"
             }
         ],
-        "analysis": "El cliente ha comprado analgésicos antiinflamatorios. Se recomienda protector gástrico como medida preventiva, vitaminas para apoyo general, y tratamiento tópico como alternativa complementaria."
+        "analysis": "El cliente ha comprado analgésicos antiinflamatorios. Se recomienda protector gástrico OTC como medida preventiva, vitaminas para apoyo general, y tratamiento tópico como alternativa complementaria."
     }
 
 
 @pytest.fixture
-def mock_claude_client(cache_manager, mock_anthropic_response):
+def mock_claude_client(cache_manager, mock_anthropic_response, db_manager, sample_products):
     """
-    ClaudeClient with mocked Anthropic API.
+    ClaudeClient with mocked Anthropic API and populated database.
 
     Prevents real API calls during tests while maintaining cache behavior.
 
     Args:
         cache_manager: Cache manager fixture
         mock_anthropic_response: Mock response fixture
+        db_manager: DatabaseManager fixture with test database
+        sample_products: Sample products to populate database
 
     Yields:
         ClaudeClient: Client with mocked API
@@ -209,6 +234,10 @@ def mock_claude_client(cache_manager, mock_anthropic_response):
         ...     cart = [{"name": "Ibuprofeno", "category": "Analgésicos"}]
         ...     result = mock_claude_client.get_recommendations(cart)
     """
+    # Populate database with sample products for filtering
+    for product in sample_products:
+        db_manager.add_product(product)
+
     with patch('raspberry_app.api.claude_client.Anthropic') as mock_anthropic:
         # Configure mock response
         mock_instance = Mock()
@@ -221,10 +250,11 @@ def mock_claude_client(cache_manager, mock_anthropic_response):
         mock_instance.messages.create.return_value = mock_response
         mock_anthropic.return_value = mock_instance
 
-        # Create client with test API key
+        # Create client with test API key and test database
         client = ClaudeClient(
             cache_manager=cache_manager,
-            api_key="test-api-key"
+            api_key="test-api-key",
+            db_manager=db_manager
         )
 
         yield client

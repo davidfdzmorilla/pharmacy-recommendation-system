@@ -105,11 +105,12 @@ class DatabaseManager(LoggerMixin):
         with self.get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                INSERT INTO products (ean, name, price, category, active_ingredient, description, stock)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                INSERT INTO products (ean, name, price, category, active_ingredient, description, stock, requires_prescription)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 product.ean, product.name, product.price, product.category,
-                product.active_ingredient, product.description, product.stock
+                product.active_ingredient, product.description, product.stock,
+                1 if product.requires_prescription else 0
             ))
             product_id = cursor.lastrowid
             self.logger.debug(f"Added product: {product}")
